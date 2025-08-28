@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements();
 });
 
-// Handle contact form submission
+/*// Handle contact form submission
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -123,7 +123,7 @@ if (contactForm) {
         contactForm.innerHTML = '';
         contactForm.appendChild(successMessage);
     });
-}
+}*/
 
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
