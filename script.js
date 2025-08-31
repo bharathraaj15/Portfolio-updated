@@ -120,7 +120,7 @@ fetch(contactForm.action, {
     alert('Oops! Something went wrong.');
   }
 });
-
+/*
         // Show success message
         const successMessage = document.createElement('div');
         successMessage.className = 'success-message';
@@ -133,7 +133,7 @@ fetch(contactForm.action, {
         contactForm.innerHTML = '';
         contactForm.appendChild(successMessage);
     });
-}
+}*/
 
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
