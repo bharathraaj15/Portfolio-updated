@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements();
 });
 
-/*// Handle contact form submission
+// Handle contact form submission
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -94,7 +94,10 @@ if (contactForm) {
         const message = document.getElementById('message').value;
 
         // Simple form validation
-   
+        if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields');
+            return;
+        }
 
         // Here you would normally send the form data to a server
         // For this demo, we'll just show a success message
@@ -105,9 +108,7 @@ if (contactForm) {
             subject,
             message
         };
-     if (!name || !email || !subject || !message) {
-            alert('Please fill out all fields');
-        }
+
         console.log('Form submitted:', formData);
 
         // Show success message
@@ -122,48 +123,8 @@ if (contactForm) {
         contactForm.innerHTML = '';
         contactForm.appendChild(successMessage);
     });
-}*/
+}
 
-// Send data to Formspree using AJAX, prevent page reload and handle response
-const formData = new FormData(contactForm);
-
-fetch(contactForm.action, {
-  method: "POST",
-  body: formData,
-  headers: {
-    'Accept': 'application/json'
-  }
-}).then(response => {
-  if (response.ok) {
-    // Show success message
-    const successMessage = document.createElement('div');
-    successMessage.className = 'success-message';
-    successMessage.innerHTML = `<p>Thank you for your message, ${name}! I'll get back to you soon.</p>`;
-    contactForm.innerHTML = '';
-    contactForm.appendChild(successMessage);
-  } else {
-    alert('Oops! Something went wrong.');
-  }
-});
-
-/*document.addEventListener('DOMContentLoaded', () => {
-  const contactForm = document.getElementById('contact-form');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const subject = document.getElementById('subject').value.trim();
-      const message = document.getElementById('message').value.trim();
-
-      if (!name || !email || !subject || !message) {
-        alert('Please fill out all fields');
-        e.preventDefault(); // Stop form from submitting
-      }
-    });
-  }
-});
-*/
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -200,3 +161,17 @@ if (binaryElement) {
     // Start typing effect when page loads
     setTimeout(typeWriter, 1000);
 }
+
+// tryhackme batch api call
+fetch('https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3731754')
+  .then(response => response.json())
+  .then(data => {
+    let html = '';
+    // Example: display badge images if available
+    if (data.badges) {
+      data.badges.forEach(badge => {
+        html += `<img src="${badge.imageUrl}" alt="${badge.name}" style="height:50px;margin:6px;">`;
+      });
+    }
+    document.getElementById('thm-badge-area').innerHTML = html;
+  });
