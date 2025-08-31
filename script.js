@@ -107,7 +107,6 @@ if (contactForm) {
         };*/
      if (!name || !email || !subject || !message) {
             alert('Please fill out all fields');
-            return;
         }
         console.log('Form submitted:', formData);
 
