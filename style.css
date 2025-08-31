@@ -399,18 +399,6 @@ nav {
    animation: pulse 2s infinite;
 }
 
-.ripple {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 150px;
-    border: 2px solid var(--accent-color);
-    border-radius: 50%;
-    animation: ripple 2s linear infinite;
-}
-
 .binary {
     position: absolute;
     font-family: monospace;
