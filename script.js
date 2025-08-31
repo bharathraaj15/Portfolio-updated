@@ -128,6 +128,7 @@ fetch(contactForm.action, {
     alert('Oops! Something went wrong.');
   }
 });
+});
 /*
         // Show success message
         const successMessage = document.createElement('div');
