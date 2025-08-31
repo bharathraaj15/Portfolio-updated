@@ -123,6 +123,29 @@ if (contactForm) {
         contactForm.appendChild(successMessage);
     });
 }*/
+
+// Send data to Formspree using AJAX, prevent page reload and handle response
+const formData = new FormData(contactForm);
+
+fetch(contactForm.action, {
+  method: "POST",
+  body: formData,
+  headers: {
+    'Accept': 'application/json'
+  }
+}).then(response => {
+  if (response.ok) {
+    // Show success message
+    const successMessage = document.createElement('div');
+    successMessage.className = 'success-message';
+    successMessage.innerHTML = `<p>Thank you for your message, ${name}! I'll get back to you soon.</p>`;
+    contactForm.innerHTML = '';
+    contactForm.appendChild(successMessage);
+  } else {
+    alert('Oops! Something went wrong.');
+  }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
 
