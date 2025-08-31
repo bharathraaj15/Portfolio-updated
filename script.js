@@ -91,22 +91,6 @@ contactForm.addEventListener('submit', (e) => {
     return; // Stop submission if validation fails
   }
 
-  const formData = new FormData(contactForm);
-  
-  fetch(contactForm.action, {
-    method: 'POST',
-    body: formData,
-    headers: { 'Accept': 'application/json' }
-  })
-  .then(response => {
-    if (response.ok) {
-      // success message logic
-    } else {
-      // error handling logic
-    }
-  });
-});
-
 /*// Handle contact form submission
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
