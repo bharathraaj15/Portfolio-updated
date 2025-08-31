@@ -82,8 +82,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateElements();
 });
+contactForm.addEventListener('submit', (e) => {
+  e.preventDefault();
 
-// Handle contact form submission
+  // Simple validation
+  if (!contactForm.name.value || !contactForm.email.value || !contactForm.subject.value || !contactForm.message.value) {
+    alert('Please fill out all fields');
+    return; // Stop submission if validation fails
+  }
+
+  const formData = new FormData(contactForm);
+  
+  fetch(contactForm.action, {
+    method: 'POST',
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  })
+  .then(response => {
+    if (response.ok) {
+      // success message logic
+    } else {
+      // error handling logic
+    }
+  });
+});
+
+/*// Handle contact form submission
 if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -98,7 +122,7 @@ if (contactForm) {
             alert('Please fill out all fields');
             return;
         }
-
+*/
         // Send data to Formspree using AJAX, prevent page reload and handle response
 const formData = new FormData(contactForm);
 
