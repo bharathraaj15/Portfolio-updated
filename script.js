@@ -107,7 +107,7 @@ if (contactForm) {
             email,
             subject,
             message
-        };
+        };*/
 
         console.log('Form submitted:', formData);
 
@@ -123,7 +123,7 @@ if (contactForm) {
         contactForm.innerHTML = '';
         contactForm.appendChild(successMessage);
     });
-}*/
+}
 
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
