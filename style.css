@@ -396,6 +396,7 @@ nav {
   width: 300px;            /* Or the width of your icon */
   height: 300px;           /* Or the height of your icon */
   position: relative;
+   animation: pulse 2s infinite;
 }
 
 .ripple {
