@@ -146,7 +146,7 @@ fetch(contactForm.action, {
   }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
   const contactForm = document.getElementById('contact-form');
 
   if (contactForm) {
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
+*/
 // Add smooth scrolling to all links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
