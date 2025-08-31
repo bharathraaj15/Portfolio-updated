@@ -374,27 +374,28 @@ nav {
 }
 
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   align-items: center;       /* Vertically centers the logo/icon in its container */
+   justify-content: center;   /* Horizontally centers logo in its container */
+   flex: 1 1 0;               /* Allows to grow and fill right side */
+   height: 100%; 
 }
 
 .security-graphic {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;             /* Ensures full available width */
+   height: 100%;
 }
 
 .shield {
-    position: relative;
-    font-size: 8rem;
-    color: var(--accent-color);
-    animation: pulse 2s infinite;
-    text-shadow: 0 0 15px var(--accent-color), 0 0 30px var(--accent-color);
+  display: flex;           /* For ripple and image to center together if needed */
+  align-items: center;
+  justify-content: center;
+  width: 300px;            /* Or the width of your icon */
+  height: 300px;           /* Or the height of your icon */
+  position: relative;
 }
 
 .ripple {
