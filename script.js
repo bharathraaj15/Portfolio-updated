@@ -180,7 +180,7 @@ if (binaryElement) {
     setTimeout(typeWriter, 1000);
 }
 
-// tryhackme batch api call
+/*// tryhackme batch api call
 fetch('https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3731754')
   .then(response => response.json())
   .then(data => {
@@ -193,3 +193,4 @@ fetch('https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3731754')
     }
     document.getElementById('thm-badge-area').innerHTML = html;
   });
+*/
