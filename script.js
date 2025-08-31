@@ -94,10 +94,7 @@ if (contactForm) {
         const message = document.getElementById('message').value;
 
         // Simple form validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill out all fields');
-            return;
-        }
+   
 
         // Here you would normally send the form data to a server
         // For this demo, we'll just show a success message
@@ -108,7 +105,10 @@ if (contactForm) {
             subject,
             message
         };*/
-
+     if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields');
+            return;
+        }
         console.log('Form submitted:', formData);
 
         // Show success message
